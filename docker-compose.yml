@@ -35,10 +35,6 @@ services:
       - 9200:9200
     networks:
       - elastic
-    logging:
-      driver: fluentd
-      options:
-        tag: es01
 
   es02:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
@@ -63,10 +59,6 @@ services:
       - 9201:9200
     networks:
       - elastic
-    logging:
-      driver: fluentd
-      options:
-        tag: es02
 
   es03:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
@@ -91,10 +83,6 @@ services:
       - 9202:9200
     networks:
       - elastic
-    logging:
-      driver: fluentd
-      options:
-        tag: es03
 
   kib01:
     image: docker.elastic.co/kibana/kibana:7.8.0
@@ -113,10 +101,6 @@ services:
       ELASTICSEARCH_HOSTS: http://es01:9200
     networks:
       - elastic
-    logging:
-      driver: fluentd
-      options:
-        tag: kibana
 
 volumes:
   data01:
